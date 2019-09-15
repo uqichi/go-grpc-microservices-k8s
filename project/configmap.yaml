@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: project-config
+  namespace: project
+  labels:
+    app: project
+data:
+  activity_service_addr: "activity-service.activity.svc.cluster:50051"
+  user_service_addr: "user-service.user.svc.cluster:50051"
