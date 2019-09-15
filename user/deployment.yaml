@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user
+  namespace: user
+  labels:
+    app: user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user
+  template:
+    metadata:
+      labels:
+        app: user
+    spec:
+      containers:
+        - name: user
+          image: asia.gcr.io/stable-device-253005/go-grpc-microservices-user
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 50051
+              protocol: TCP
