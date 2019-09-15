@@ -19,7 +19,28 @@ spec:
         - name: front
           image: asia.gcr.io/stable-device-253005/go-grpc-microservices-front
           imagePullPolicy: Always
+          env:
+            - name: ACTIVITY_SERVICE_ADDR
+              valueFrom:
+                configMapKeyRef:
+                  name: front-config
+                  key: activity_service_addr
+            - name: PROJECT_SERVICE_ADDR
+              valueFrom:
+                configMapKeyRef:
+                  name: front-config
+                  key: project_service_addr
+            - name: USER_SERVICE_ADDR
+              valueFrom:
+                configMapKeyRef:
+                  name: front-config
+                  key: user_service_addr
+            - name: TASK_SERVICE_ADDR
+              valueFrom:
+                configMapKeyRef:
+                  name: front-config
+                  key: task_service_addr
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
               protocol: TCP
