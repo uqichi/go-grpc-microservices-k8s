@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: activity-service
+  namespace: activity
+  labels:
+    app: activity
+spec:
+  selector:
+    app: activity
+  type: ClusterIP
+  ports:
+  - port: 50051
+    targetPort: 50051

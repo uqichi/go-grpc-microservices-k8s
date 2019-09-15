@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: activity
+  namespace: activity
+  labels:
+    app: activity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: activity
+  template:
+    metadata:
+      labels:
+        app: activity
+    spec:
+      containers:
+        - name: activity
+          image: asia.gcr.io/stable-device-253005/go-grpc-microservices-activity
+          imagePullPolicy: Always
+          env:
+            - name: USER_SERVICE_ADDR
+              valueFrom:
+                configMapKeyRef:
+                  name: activity-config
+                  key: user_service_addr
+          ports:
+            - name: grpc
+              containerPort: 50051
+              protocol: TCP
