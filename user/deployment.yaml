@@ -23,12 +23,12 @@ spec:
             - name: ACTIVITY_SERVICE_ADDR
               valueFrom:
                 configMapKeyRef:
-                  name: front-config
+                  name: user-config
                   key: activity_service_addr
             - name: PROJECT_SERVICE_ADDR
               valueFrom:
                 configMapKeyRef:
-                  name: front-config
+                  name: user-config
                   key: project_service_addr
           ports:
             - name: grpc
