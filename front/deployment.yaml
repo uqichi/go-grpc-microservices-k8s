@@ -41,6 +41,6 @@ spec:
                   name: front-config
                   key: task_service_addr
           ports:
-            - name: http
+            - name: http-port
               containerPort: 8080
               protocol: TCP

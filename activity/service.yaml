@@ -10,5 +10,7 @@ spec:
     app: activity
   type: ClusterIP
   ports:
-  - port: 50051
-    targetPort: 50051
+    - name: grpc
+      port: 50051
+      targetPort: grpc-port
+      protocol: TCP

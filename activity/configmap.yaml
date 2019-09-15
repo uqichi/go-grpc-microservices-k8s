@@ -6,4 +6,4 @@ metadata:
   labels:
     app: activity
 data:
-  user_service_addr: "user-service.user.svc.cluster.local:50051"
+  user_service_addr: "_grpc._tcp.user-service.user.svc.cluster.local"

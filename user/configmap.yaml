@@ -6,5 +6,5 @@ metadata:
   labels:
     app: user
 data:
-  activity_service_addr: "activity-service.activity.svc.cluster.local:50051"
-  project_service_addr: "project-service.project.svc.cluster.local:50051"
+  activity_service_addr: "_grpc._tcp.activity-service.activity.svc.cluster.local"
+  project_service_addr: "_grpc._tcp.project-service.project.svc.cluster.local"

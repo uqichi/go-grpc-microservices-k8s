@@ -6,7 +6,7 @@ metadata:
   labels:
     app: front
 data:
-  activity_service_addr: "activity-service.activity.svc.cluster.local:50051"
-  project_service_addr: "project-service.project.svc.cluster.local:50051"
-  user_service_addr: "user-service.user.svc.cluster.local:50051"
-  task_service_addr: "task-service.task.svc.cluster.local:50051"
+  activity_service_addr: "_grpc._tcp.activity-service.activity.svc.cluster.local"
+  project_service_addr: "_grpc._tcp.project-service.project.svc.cluster.local"
+  user_service_addr: "_grpc._tcp.user-service.user.svc.cluster.local"
+  task_service_addr: "_grpc._tcp.task-service.task.svc.cluster.local"

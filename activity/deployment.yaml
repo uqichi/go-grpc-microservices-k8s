@@ -26,6 +26,6 @@ spec:
                   name: activity-config
                   key: user_service_addr
           ports:
-            - name: grpc
+            - name: grpc-port
               containerPort: 50051
               protocol: TCP
