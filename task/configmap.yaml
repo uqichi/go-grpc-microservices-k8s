@@ -6,6 +6,6 @@ metadata:
   labels:
     app: task
 data:
-  activity_service_addr: "activity-service.activity.svc.cluster:50051"
-  project_service_addr: "project-service.project.svc.cluster:50051"
+  activity_service_addr: "activity-service.activity.svc.cluster.local:50051"
+  project_service_addr: "project-service.project.svc.cluster.local:50051"
   user_service_addr: "user-service.user.svc.cluster.local:50051"
