@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: front-gateway
+  namespace: front
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      name: http
+      protocol: HTTP
+      number: 80
+    hosts:
+    - "*"

@@ -8,8 +8,9 @@ metadata:
 spec:
   selector:
     app: front
-  type: LoadBalancer
+  type: ClusterIP
   ports:
-  - port: 80
-    targetPort: http-port
-    protocol: TCP
+    - name: http
+      port: 80
+      targetPort: http-port
+      protocol: TCP
