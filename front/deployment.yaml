@@ -5,6 +5,7 @@ metadata:
   namespace: front
   labels:
     app: front
+    version: v1
 spec:
   replicas: 1
   selector:

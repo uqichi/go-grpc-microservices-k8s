@@ -5,6 +5,7 @@ metadata:
   namespace: project
   labels:
     app: project
+    version: v1
 spec:
   replicas: 1
   selector:

@@ -5,6 +5,7 @@ metadata:
   namespace: activity
   labels:
     app: activity
+    version: v1
 spec:
   replicas: 6
   selector:

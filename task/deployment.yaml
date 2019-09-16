@@ -5,6 +5,7 @@ metadata:
   namespace: task
   labels:
     app: task
+    version: v1
 spec:
   replicas: 1
   selector:
