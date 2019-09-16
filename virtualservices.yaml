@@ -25,11 +25,11 @@ spec:
   hosts:
   - activity-service.activity.svc.cluster.local
   http:
-  - route:
+  - match:
+    - port: 50051
+    route:
     - destination:
         host: activity-service.activity.svc.cluster.local
-        port:
-          number: 50051
         subset: v1
 ---
 apiVersion: networking.istio.io/v1alpha3
@@ -41,11 +41,11 @@ spec:
   hosts:
   - project-service.project.svc.cluster.local
   http:
-  - route:
+  - match:
+    - port: 50051
+    route:
     - destination:
         host: project-service.project.svc.cluster.local
-        port:
-          number: 50051
         subset: v1
 ---
 apiVersion: networking.istio.io/v1alpha3
@@ -57,11 +57,11 @@ spec:
   hosts:
   - task-service.task.svc.cluster.local
   http:
-  - route:
+  - match:
+    - port: 50051
+    route:
     - destination:
         host: task-service.task.svc.cluster.local
-        port:
-          number: 50051
         subset: v1
 ---
 apiVersion: networking.istio.io/v1alpha3
@@ -73,9 +73,9 @@ spec:
   hosts:
   - user-service.user.svc.cluster.local
   http:
-  - route:
+  - match:
+    - port: 50051
+    route:
     - destination:
         host: user-service.user.svc.cluster.local
-        port:
-          number: 50051
         subset: v1
