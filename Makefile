@@ -28,3 +28,7 @@ replace_task:
 replace_user:
 	kubectl replace --force -f user/deployment.yaml
 replace_all: replace_activity replace_project replace_user replace_task replace_front
+
+helm_init:
+	kubectl create -f helm-tiller/rbac-config.yaml
+	helm init --service-account tiller --history-max 200
