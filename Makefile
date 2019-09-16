@@ -32,3 +32,12 @@ replace_all: replace_activity replace_project replace_user replace_task replace_
 helm_init:
 	kubectl create -f helm-tiller/rbac-config.yaml
 	helm init --service-account tiller --history-max 200
+install_istio:
+	cd $HOME
+	curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.3.0 sh -
+	cd istio-1.3.0
+	export PATH=$PWD/bin:$PATH
+	helm repo add istio.io https://storage.googleapis.com/istio-release/releases/1.3.0/charts/
+	helm install install/kubernetes/helm/istio-init --name istio-init --namespace istio-system
+	kubectl get crds | grep 'istio.io' | wc -l
+	helm install install/kubernetes/helm/istio --name istio --namespace istio-system
