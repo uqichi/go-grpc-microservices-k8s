@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: user
-          image: asia.gcr.io/stable-device-253005/go-grpc-microservices-user
+          image: asia.gcr.io/gentle-current-254006/micro-user
           imagePullPolicy: Always
           env:
             - name: ACTIVITY_SERVICE_ADDR
