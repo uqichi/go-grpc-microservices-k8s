@@ -5,6 +5,9 @@ metadata:
   namespace: project
 spec:
   host: project-service.project.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
   subsets:
     - name: v1
       labels:
