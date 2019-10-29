@@ -5,6 +5,9 @@ metadata:
   namespace: task
 spec:
   host: task-service.task.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
   subsets:
     - name: v1
       labels:
